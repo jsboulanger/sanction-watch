@@ -1,0 +1,82 @@
+
+<script type="text/javascript">
+
+$(function() {
+
+	$('#query_input').autocomplete('/suggest', {
+		minChars: 3,
+		max: 10,
+		delay: 100,
+		selectFirst: false,
+		cacheLength: 0
+	});	
+});
+
+
+</script>
+<div id="search_box">
+<form action="/" method="get">
+        <b>Enter name of person or organization</b>: <br /><input id="query_input" type="text" size="50" name="q" value="<%= params[:q] %>" />
+	<input type="submit" value="search" />
+        <% if params[:q].blank? %>
+        <br /><span id="search_example">example: Osama ben laden</span>
+        <% end %>
+</form>
+</div>
+
+
+<% if @results && @results.size > 0 %>
+
+<div id="results_summary">
+  
+   Match <%= results_range(@search, @current_page) %> of <%= @search.total_hits %> hit<%= @search.total_hits == 1 ? ' was' : 's were' %> returned in <%= @search.query_time / 1000.0 %> seconds.
+
+</div>
+
+<%   @results.each do |result| %>
+<%= erb :"_result", :layout => false, :locals => {:record => result} %>
+<%   end %>
+
+
+Pages: <%= pagination_links @search, @current_page %>
+
+<% else%>
+
+  <% unless params[:q].blank? %>
+
+<strong>We did not find any result for <%=h params[:q] %>.</strong>
+
+  <% else %>
+
+<div id="intro" class="info">
+<h3>What is SanctionWatch.net?</h3>
+<p>
+SanctionWatch.net <strong>searches international sanction lists</strong> to help you identify
+high-profile criminals, money launderers and terrorist organizations. It can help you achieve <strong>customer identification (KYC)
+and reporting compliance requirements</strong> with the local authority such as FINTRAC in Canada.
+</p>
+
+We currently search the following sanction lists:
+<ul>
+        <li>OSFI (Canada): <a href="http://www.osfi-bsif.gc.ca">Office of the Superintendent of Financial Institutions</a></li>
+        <li>DFAT (Australia): Australia's Department of Foreign Affairs and Trade - <em>Coming soon!</em> </li>
+        <li>OFAC SDN (USA): Specially Designated Nationals List - <em>Coming soon!</em></li>
+</ul>
+
+
+<a href="/solutions">more about our technology</a>
+</div>
+  <% end %>
+
+
+<% end %>
+
+
+<% if @suggestions && @suggestions.size > 0 %>
+<div>
+Did you mean: <br />
+<%   @suggestions.each do |sug| %>
+<a href="/?q=<%= escape(sug['full_name']) %>"><%=h sug['full_name'] %></a><br />
+<%   end %>
+</div>
+<% end %>

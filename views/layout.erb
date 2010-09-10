@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+          <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<link rel="stylesheet" href="stylesheets/style.css?<%= rand(10) %>" type="text/css" />
+		<link rel="stylesheet" href="stylesheets/jquery.autocomplete.css" type="text/css" />
+		
+		
+		
+		<script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"></script>
+   		<script type="text/javascript" src="javascripts/jquery.autocomplete.pack.js"></script>
+   	
+		
+		<title>Sanctionwatch.net</title>
+		
+	</head>
+	<body>
+		<div id="page-frame">			
+		<div id="container">
+                        <div id="header">&nbsp;<a href="/" class="title">SanctionWatch.net</a>&nbsp;(Alpha)</div>
+			<div id="topnav"></div>
+			<div id="content"><%= yield %></div>
+		    <div id="footer">
+                      <div id="navigation">
+		    			<ul>
+                                          <li><a href="/">Home</a></li>
+					  <li><a href="/solutions">Developers API</a></li>
+					  <li><a href="/contact">Contact us</a></li>
+					</ul>
+                      </div>
+                      <div id="copyright">
+                       
+                        400 Atlantic, Suite 101, Montreal, QC, Canada H2V 1A5 <br />
+                         &copy; 2009 SanctionWatch.net
+                        
+                      </div>
+		    </div>
+		</div>
+		</div>
+
+          <%=  erb :"_tracking", :layout => false %>
+	</body>
+</html>

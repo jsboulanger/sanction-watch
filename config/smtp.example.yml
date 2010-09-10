@@ -1,0 +1,13 @@
+DEFAULTS: &DEFAULTS
+  host: smtp.yourhost
+  port: 25
+  user: username
+  password: password
+  auth: login
+  domain: yourdomain
+
+development:
+  <<: *DEFAULTS
+  
+production:
+  <<: *DEFAULTS

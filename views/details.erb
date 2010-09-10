@@ -1,0 +1,70 @@
+<h1><%=h @doc['full_name'] %> (<%=h @doc['type'] %>)</h1>
+<table class="details" cellpadding="0" cellspacing="0">
+  <% unless @doc['aka'].blank? %>
+  <tr>
+    <td class="label">Also known as:</td>
+    <td><%=h @doc['aka'].map {|a| a == params[:q] ? "<strong>#{a}</strong>" : a }.join(', ') %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td class="label">Type</td>
+    <td><%=h @doc['type'] %></td>
+  </tr>
+
+  <tr>
+    <td class="label">Title</td>
+    <td><%=h @doc['title'] %></td>
+  </tr>
+  <tr>
+    <td class="label">Date of birth</td>
+    <td><%=h @doc['date_of_birth'] %></td>
+  </tr>
+  <% unless @doc['date_of_birth_alt'].blank? %>
+  <tr>
+    <td class="label">Alt. date of birth</td>
+    <td><%=h @doc['date_of_birth_alt'].join(', ') %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td class="label">Place of birth</td>
+    <td><%=h @doc['place_of_birth'] %></td>
+  </tr>
+  <tr>
+    <td class="label">Alt. place of birth</td>
+    <td><%=h @doc['place_of_birth_alt'] %></td>
+  </tr>
+
+  <% unless @doc['nationality'].blank? %>
+  <tr>
+    <td class="label">Nationalities</td>
+    <td><%=h @doc['nationality'].join(', ') %></td>
+  </tr>
+  <% end %>
+  
+  <tr>
+    <td class="label">Address</td>
+    <td><%=h @doc['address'] %></td>
+  </tr>
+
+  <% unless @doc['program'].nil? %>
+  <tr>
+    <td class="label">Sanction programs</td>
+    <td><%=h @doc['program'].join(', ') %></td>
+  </tr>
+  <% end %>
+  
+  <tr>
+    <td class="label">Other information</td>
+    <td><%= @doc['other_information'] %></td>
+  </tr>
+  <tr>
+    <td class="label">Source</td>
+    <td><a href="http://www.osfi-bsif.gc.ca">OSFI (Canada)</a></td>
+  </tr>
+
+</table>
+<% unless params[:q].blank? %>
+<div id="back_to_search">
+<a href="/?q=<%= escape(params[:q]) %><%= "&page=#{escape(params[:page])}" unless params[:page].blank? %>">Back to search results for &quot;<%=h params[:q] %>&quot;</a>
+</div>
+<% end %>
