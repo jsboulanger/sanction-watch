@@ -8,19 +8,13 @@ require 'lib/core_ext/blank'
 #
 # Required gems
 #  sinatra
-#  pony
-#  dm-core
-#  dm-validations
 #  solr-ruby
-#  do_mysql
 #  builder (for fetcher only)
 
 
 # Load Application
 require 'lib/search_engine'
 require 'lib/helpers'
-require 'lib/models'
-require 'lib/mailers'
 
 
 # Configure Application
@@ -46,10 +40,8 @@ helpers do
   include Rack::Utils
   alias_method :h, :escape_html
 
-  include Mailers # Application Mailers
   include Helpers # Application View Helpers
 end
-
 
 
 # Request Handlers
@@ -79,38 +71,8 @@ get '/suggest' do
   end
 end
 
-
 get '/details' do
   @doc = SearchEngine.get(params[:uid].to_s.strip)
   raise Sinatra::NotFound if @doc.nil?
   erb :details
 end
-
-
-get '/solutions' do
-  @lead = Lead.new
-  erb :solutions
-end
-
-get '/contact' do
-  @lead = Lead.new
-  erb :contact
-end
-
-get '/thankyou' do
-  erb :thankyou
-end
-
-post '/send' do
-  @lead = Lead.new(params[:lead])
-  @lead.created_at = Time.now
-  if @lead.save
-    deliver_lead(@lead)
-    redirect '/thankyou'
-  else
-    @error_message = "You need to specify a valid <strong>name</strong>, <strong>organization</strong>, <strong>email</strong>, and <strong>phone</strong>."
-    erb :contact
-  end
-end
-
-
