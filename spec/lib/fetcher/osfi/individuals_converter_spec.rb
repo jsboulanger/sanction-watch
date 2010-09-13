@@ -5,14 +5,23 @@ describe "Osfi::EntitiesConverter" do
   before(:each) do
     @converter = Osfi::IndividualsConverter.new()
     @record = [
-      "29.03",
-      "Abd Al-Baqi",
-      "Nashwan	Abd Al-Razzaq", "", "", "",
-			"Mosul, Iraq", "",
-      "1961", "", "",
-      "Iraqi", "", "",
-			"Al-Qaida senior official. In custody of the United States of America, as of July 2007.",
-      "UNSC (October 6, 2001); UNSC (May 14, 2007); UNSC (July 27, 2007)"
+               "29.03",
+               "Abd Al-Baqi",
+               "Nashwan	Abd Al-Razzaq",
+               "",
+               "",
+               "",
+               "Mosul, Iraq",
+               "",
+               "1961",
+               "",
+               "",
+               "",
+               "Iraqi",
+               "",
+               "",
+               "Al-Qaida senior official. In custody of the United States of America, as of July 2007.",
+               "UNSC (October 6, 2001); UNSC (May 14, 2007); UNSC (July 27, 2007)"
     ]
   end
 

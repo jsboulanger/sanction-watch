@@ -1,12 +1,11 @@
-require File.join(File.dirname(__FILE__), '..', 'sanctionwatch.rb')
-
 require 'rubygems'
-require 'sinatra'
-require 'lib/fetcher'
 require 'rack/test'
-require 'spec'
-require 'spec/autorun'
-require 'spec/interop/test'
+require 'rspec'
+require 'rspec/autorun'
+
+require 'sanctionwatch'
+require 'lib/fetcher'
+
 
 # set test environment
 set :environment, :test
