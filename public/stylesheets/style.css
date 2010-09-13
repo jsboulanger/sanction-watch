@@ -1,5 +1,5 @@
 
-body, input, textarea {
+body {
     font-family: "lucida grande", "lucida sans unicode", tahoma, verdana, arial, sans-serif;
     font-size: 10pt;
     color: #444;
@@ -12,119 +12,80 @@ body {
     padding: 0;
 }
 
-form { padding: 0; margin: 0; }
-
-a img {border: 0;}
-h1 {font-size: 20pt;}
-
-div#form-container input {
-    font-size:15px;
-    padding:5px;
+/* 
+   Layout 
+*/
+div#page-frame {
+    background: #fff;
+    margin: 0px auto;
+    width: 100%;
 }
 
-/* HEADER */
-div#header { padding: 0px 0; height: 65px; padding: 10px 0 10px 0; text-align: center; }
-div#header a#logo { float: left; margin-left: -7px; _margin-left: 0;}
-div#header ul#topnav { float: right; margin-top: -25px; }
-div#header ul#topnav li { list-style: none; display: inline;}
-div#header ul#topnav li a, div#header ul#topnav li strong { font-size: 11px; display: block; font-weight: normal; float: left; padding: 6px; margin: 3px;}
+div#container {
+    min-height: 400px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 5px 0 0 0;
+    width: 790px;
+}
 
+div#content {        
+    margin: 20px 10px;    
+}
 
-#content ul {
+/* 
+   Header
+*/
+
+div#header { 
+    padding: 0 0; 
+    height: 65px; 
+    padding: 10px 0 10px 0; 
+    text-align: center; 
+}
+
+div#header h1 a { 
+    font-size: 30pt; 
+    text-decoration: none; 
+    color: #000;
+}
+
+div#header .version {
+    font-size: 10pt;
+    color: #999;
+}
+
+/*
+  Footer
+*/
+
+#footer { 
+    min-height: 65px; 
+    _height: 65px; 
+    background: #fff url(../images/pixel.gif) repeat-x; 
+    clear: both; 
+    margin: 35px auto 0 auto;
+}
+
+#footer .copyright {
+  font-size: 0.8em;
+  padding: 40px 0 0 0;
+  text-align: center;
+}
+
+/*
+  Intro
+*/
+
+#intro ul {
     background-color: #DEEEFF;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-div#page-frame
-{
-    width: 100%;
-    background: #fff;
-    margin: 0px auto;
-}
-
-div#container {
-        min-height: 400px;
-        background: #fff;
-        margin: 0 auto;
-        padding: 5px 0 0 0;
-		width: 790px;
- }
-
-div#content
-{        
-        margin: 20px 10px;
-        
-}
-
-div#index-content
-{
-        margin: 30px auto;
-        text-align: center;
-        min-height: 370px;
-        _height: 370px;
-        /* background: url(/static/images/background_home.gif) top center no-repeat; */
-}
-
-div#form-container { border: 1px solid #ccc; padding: 10px 10px;  width: 400px; background-color: #EEEEEE; margin-left: auto ; margin-right: auto ;}
-
-div#header-top-right { position: absolute; top: 20px; right: 20px; }
-/* div#header-top-right .button { /*background: #5096c8;/  border: 0; border-right: 1px solid #19589d; border-bottom: 1px solid #19589d; font-size: 11px; padding: 1px 4px;}
-div#header-top-right label { font-size: 11px; }
-div#header-top-right input { max-width: 125px;} */
-
-div#header .title { font-size: 38px; text-decoration: none; color: #000;}
-
-
-.clear { clear: both; }
-
-
-span#alpha {font-size: 12px; color:#C92323; font-weight: bold;}
-
-div#footer { min-height: 65px; _height: 65px; background: #fff url(../images/pixel.gif) repeat-x; clear: both; margin: 35px auto 0 auto;}
-
-
-
-div#notice-box {
-  margin: 10px auto 20px auto;
-  border: 1px solid #339933;
-  padding: 10px 20px;
-  background-color: #BBFF99;
-  font-size: 10pt;
-  color: #339933;
-}
-
-
-
-div#error-box {
-  margin: 10px auto 20px auto;
-  border: 1px solid #ff0000;
-  padding: 10px 20px;
-  background-color: #FF8888;
-  font-size: 10pt;
-}
-
-div#error-box h1 {
-  display: inline;
-  font-size: 16pt;
-}
-
-.error {
-  color: red;
-}
-
-div#main_container { /* margin: 30px auto 50px auto;  border: 1px solid #ccc; padding: 10px 10px; */  }
-
-.info_box { margin: 30px auto 50px auto;  border: 1px solid #ccc; padding: 10px 10px; background-color: #EEEEEE}
-
-
-.infotable tr td { padding-left: 20px; padding-right: 10px; padding-bottom: 10px; }
-
-#search_example {
-    font-size: 10pt;
-    font-style: italic;
-    padding: 0 0 0 20px;
-}
+/* 
+   Search Box
+*/
 
 #search_box {
     padding: 10px 0 40px 20px;
@@ -135,29 +96,14 @@ div#main_container { /* margin: 30px auto 50px auto;  border: 1px solid #ccc; pa
     font-size: 13pt;
 }
 
-
-#footer ul {
-  
-  font-weight:normal;
-  text-align:center;
-  margin:0;
-  padding:0 40px 0.25em 40px;
-}
-#footer ul li {
-  display:inline;
-  list-style-type:none;
-  padding:0 2.0em 0 0;
+.example {
+    font-size: 10pt;
+    font-style: italic;
 }
 
-#footer #navigation {
-  padding: 20px 0 0 0;
-}
-
-#footer #copyright {
-  font-size: 0.8em;
-  padding: 40px 0 0 0;
-  text-align: center;
-}
+/* 
+   Page Navigation
+*/
 
 .current_page {
   font-weight:bold;
@@ -168,6 +114,10 @@ div#main_container { /* margin: 30px auto 50px auto;  border: 1px solid #ccc; pa
   padding-left:5px;
 }
 
+/*
+  Search Results
+*/
+
 #results_summary {
   background:#EEEEEE url(../images/pixel.gif) repeat-x scroll 0 0;
   padding-top: 2px;
@@ -177,11 +127,7 @@ div#main_container { /* margin: 30px auto 50px auto;  border: 1px solid #ccc; pa
   padding-top: 5px;
 }
 
-div.result h4{
-  margin: 0px 0px 0px 0px;
-}
-
-div.result_info {
+.result_info {
   margin: 5px 0px 0px 0px;
 }
 
@@ -191,6 +137,10 @@ div.result_info {
 
 .result {
     margin: 10px 0px 30px 0px;
+}
+
+.result h4{
+  margin: 0px 0px 0px 0px;
 }
 
 .result .label {
@@ -213,28 +163,35 @@ div.result_info {
     text-decoration: underline;
 }
 .result .source a:visited{
-    color: #888888;
-    
+    color: #888888;    
 }
-
-
-
-/* a { color: #336699 ; text-decoration: none; }
-a:hover { text-decoration: underline;} */
-
 
 .result_aka {
   font-style: italic;
 }
 
+/*
+  Search Result Details
+*/
 
-table.details { border-left:1px solid #E6E6E6; border-right:1px solid #E6E6E6; border-top:1px solid #E6E6E6;}
-table.details	tr	td	{ height:28px; padding-top: 10px; padding-bottom: 10px; padding-left: 7px; padding-right: 6px; border-bottom:1px solid #E6E6E6; border-right: 1px solid #EEEEEE; }
+table.details { 
+    border-left: 1px solid #E6E6E6; 
+    border-right: 1px solid #E6E6E6; 
+    border-top:1px solid #E6E6E6;
+}
 
+table.details tr td {
+    height: 28px; 
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-left: 7px; 
+    padding-right: 6px; 
+    border-bottom: 1px solid #E6E6E6; 
+    border-right: 1px solid #EEEEEE;
+}
 
-.details td.label {
-  white-space:nowrap;
-  
+table.details td.label {
+    white-space:nowrap;  
 }
 
 #back_to_search {
