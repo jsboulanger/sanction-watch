@@ -1,8 +1,8 @@
 <div class="result">
   <h4>
-    <a href="/details?uid=<%= escape(record['guid'])
-    %>&q=<%= escape(params[:q]) %><%= "&page=#{escape(params[:page])}"
-    unless params[:page].blank? %>"><%=h record['full_name'] %></a>
+    <a href="/details?uid=<%= escape(record['guid']) %>&q=<%= escape(params[:q]) %><%= "&page=#{escape(params[:page])}" unless params[:page].blank? %>">
+      <%=h record['full_name'] %>
+    </a>
     (<%= record['type'] %>)
   </h4>
   <% if record['aka'].to_s.size > 0 %>
