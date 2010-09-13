@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
-require 'lib/util/config_loader'
 require 'lib/core_ext/blank'
 
 # Load Application
