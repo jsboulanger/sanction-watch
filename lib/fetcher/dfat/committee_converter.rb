@@ -1,5 +1,4 @@
 module Dfat
-
   class CommitteeConverter < BaseConverter
     
     def initialize(committee)
@@ -7,7 +6,6 @@ module Dfat
       @entities_store = {}
       @committee = committee
     end
-
 
     def convert_record(record)
       id = extract_id(record)
@@ -23,7 +21,5 @@ module Dfat
       end
       self
     end
-
   end
-
 end

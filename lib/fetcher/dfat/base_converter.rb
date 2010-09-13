@@ -1,5 +1,4 @@
 module Dfat
-
   # Base converter for a DFAT file. This is an abstract class and should be extended.
   class BaseConverter
     attr_reader :names
@@ -40,13 +39,12 @@ module Dfat
       @entities_store.values
     end
 
-    protected
+  protected
 
     def extract_committee(record)
       comm = record[Index::COMMITTEE].to_s.gsub(/[^\d]/, '').to_i
       comm == 0 ? nil : comm
     end
-
 
     def extract_id(record)
       id = record.first.is_a?(String) ? record.first : record.first.to_i.to_s

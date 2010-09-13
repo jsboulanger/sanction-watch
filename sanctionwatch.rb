@@ -4,14 +4,6 @@ require 'erb'
 require 'lib/util/config_loader'
 require 'lib/core_ext/blank'
 
-
-#
-# Required gems
-#  sinatra
-#  solr-ruby
-#  builder (for fetcher only)
-
-
 # Load Application
 require 'lib/search_engine'
 require 'lib/helpers'
@@ -46,7 +38,6 @@ end
 
 # Request Handlers
 get '/' do
-  
   unless params[:q].blank?
     @current_page = params[:page].to_i || 1
     @current_page = 1 if @current_page < 1

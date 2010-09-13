@@ -1,8 +1,6 @@
 require 'spreadsheet'
 
-
 module Dfat
-
   # Reads an DFAT file into an array
   class FileReader
 
@@ -35,8 +33,6 @@ module Dfat
       def clean(str)
         str.to_s.gsub('"', '').strip
       end
-
     end # self << class
-
   end # FileReader
 end # Osfi

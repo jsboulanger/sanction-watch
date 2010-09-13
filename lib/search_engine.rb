@@ -1,7 +1,6 @@
 require 'solr'
 
 class SearchEngine
-  
   @@config = {
     :solr_url => "",
     :results_per_page => 10
@@ -39,14 +38,14 @@ class SearchEngine
     connection.query(build_suggest_query(sanitize(query)), :start => 0, :rows => 10)
   end
 
-  private
+private
 
   def self.sanitize(query)
-    # TODO: Find out if solr can be vulnerable to someking of injection
+    # TODO: Find out if solr can be vulnerable to somekind of injection
     query
   end
 
-
+  # TODO: Refactor this ugly query building
   def self.build_search_query(query)
     tokens = query.split(/\s/).map{|s| s.strip }
 

@@ -1,9 +1,6 @@
 module Osfi
-
-
   class BurmaEntitiesConverter < EntitiesConverter
-
-     class Index
+    class Index
       ID = 0
       NAME = 1
       ADDRESS = 2
@@ -25,7 +22,7 @@ module Osfi
       }
     end
 
-    protected
+  protected
 
     def make_program(record)
       super(record).map {|p| "UN Burma #{p.strip}" }
@@ -34,6 +31,5 @@ module Osfi
     def make_guid(str)
       "OSFIEBUR#{str}"
     end
-
   end # IranEntitiesConverter
 end # Osfi

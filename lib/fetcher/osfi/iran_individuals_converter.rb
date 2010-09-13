@@ -1,8 +1,7 @@
 module Osfi
-
   class IranIndividualsConverter < IndividualsConverter
 
-    protected
+  protected
 
     def make_program(record)
       super(record).map {|p| "UN Iran #{p.strip}" }

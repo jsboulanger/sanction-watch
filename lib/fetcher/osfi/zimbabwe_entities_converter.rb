@@ -1,6 +1,4 @@
 module Osfi
-
-
   class ZimbabweEntitiesConverter < EntitiesConverter
 
      class Index
@@ -25,7 +23,7 @@ module Osfi
       }
     end
 
-    protected
+  protected
 
     def make_program(record)
       super(record).map {|p| "UN Zimbabwe #{p.strip}" }

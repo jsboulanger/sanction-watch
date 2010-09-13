@@ -1,5 +1,4 @@
 module Osfi
-
   # Converts an OSFI entities list.
   class EntitiesConverter < BaseConverter
 
@@ -10,7 +9,7 @@ module Osfi
       BASIS = 3
     end
 
-    protected
+  protected
 
     def make_entity(r)
       id = r[Index::ID].split('.').first
@@ -41,8 +40,5 @@ module Osfi
     def make_guid(str)
       "OSFIE#{str}"
     end
-
-    
-
   end # EntitiesConverter
 end # Osfi

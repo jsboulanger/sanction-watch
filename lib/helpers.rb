@@ -1,4 +1,3 @@
-
 # View's Helpers
 module Helpers
   def pagination_links(search_results, current_page)

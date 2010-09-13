@@ -1,5 +1,4 @@
 module Osfi
-
   # Converts an OSFI individuals list
   class IndividualsConverter < BaseConverter
 
@@ -23,7 +22,7 @@ module Osfi
       BASIS = 16
     end
 
-    protected
+  protected
 
     def make_name(r)
       {
@@ -62,8 +61,6 @@ module Osfi
       make_fullname(r)
     end
 
-    protected
-
     def make_fullname(r)
       [make_firstname(r), r[Index::LAST_NAME]].select {|n| n != ''}.join(' ')
     end
@@ -75,7 +72,6 @@ module Osfi
     def make_guid(str)
       "OSFII#{str}"
     end
-
 
   end # IndividualsConverter
 end # Osfi

@@ -1,4 +1,3 @@
-
 module Osfi
 
   # Reads an OSFI file into an array

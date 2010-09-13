@@ -1,5 +1,4 @@
 module Osfi
-
   class ZimbabweIndividualsConverter < IndividualsConverter
 
     class Index
@@ -13,7 +12,7 @@ module Osfi
       BASIS = 7
     end
 
-    protected
+  protected
 
 
     def make_entity(r)
@@ -37,8 +36,6 @@ module Osfi
             :aka => []
       }
     end
-
-    protected
 
     def make_fullname(r)
       [make_firstname(r), r[Index::LAST_NAME]].select {|n| n != ''}.join(' ')
