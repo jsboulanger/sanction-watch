@@ -7,7 +7,7 @@ describe "Sanction Watch" do
     @app ||= Sinatra::Application
   end
 
-  before(:each) do
+  before do
     @q = "keyword"
     @search_mock = search_mock
     SearchEngine.stub!(:search).and_return @search_mock
@@ -16,8 +16,6 @@ describe "Sanction Watch" do
   end
 
   describe 'get /' do
-    
-
     it "should respond to /" do
       get '/'
       last_response.should be_ok
@@ -38,9 +36,7 @@ describe "Sanction Watch" do
       get "/", :q => @q, :page => "asdfasdf"
     end
     
-    it "should time query" do
-      # TODO
-    end
+    it "should time query"
     
     it "should search for query" do
       SearchEngine.should_receive(:search).with(@q, anything).and_return search_mock
@@ -55,12 +51,10 @@ describe "Sanction Watch" do
     it "should find suggestions if there is not results" do
       SearchEngine.should_receive(:suggest)
       get "/", :q => @q
-    end        
-    
-  end # get /
+    end
+  end
 
   describe 'get /suggest' do
-
     it "should respond to /" do
       get '/suggest'
       last_response.should be_ok
@@ -84,11 +78,9 @@ describe "Sanction Watch" do
       get "/suggest", :q => @q
       last_response.body.should == "JS Boulanger\nPeter Jackson"
     end
-
-  end # get /suggest
+  end
 
   describe "get /details" do
-
     it "should respond to /" do
       get '/details', :uid => "id"
       last_response.should be_ok
@@ -104,6 +96,5 @@ describe "Sanction Watch" do
       get "/details"
       last_response.should be_not_found
     end
-
-  end # /suggest
-end # Sanction Watch
+  end
+end

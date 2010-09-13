@@ -1,14 +1,12 @@
 require File.dirname(__FILE__) + '/../../../spec_helper'
 
-
 describe "Osfi::BaseConverter" do
-  before(:each) do
+  before do
     @converter = Osfi::BaseConverter.new
   end
 
-  describe "convert_record" do
-
-    before(:each) do
+  describe "#convert_record" do
+    before do
       @converter.stub!(:make_entity => {}, :make_aka => {}, :make_name => {})
       @record = ["234"]
     end
@@ -25,15 +23,11 @@ describe "Osfi::BaseConverter" do
       @converter.convert_record(@record)
     end
 
-    it "should make_name for all records" do
+    it "should make_name for all records"
+  end
 
-    end
-
-  end # convert_record
-
-
-  describe "extract_other_field" do
-    before(:each) do
+  describe "#extract_other_field" do
+    before do
       @info = "Passport no.: Yemeni passport number 54193; identification no.: Yemeni identity card number 216040; Address: Jamal street, Al-Dahima alley, Al-Hudaydah, Yemen; Other information: Yemen Responsible for the finances... "
     end
 
@@ -56,7 +50,5 @@ describe "Osfi::BaseConverter" do
       value, info = @converter.send(:extract_other_field, "no match", "")
       value.should be_nil
     end
-
-
-  end # extract_other_field
-end # Osfi::BaseConverter
+  end
+end

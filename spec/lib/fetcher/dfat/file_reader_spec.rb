@@ -1,15 +1,12 @@
 require File.dirname(__FILE__) + '/../../../spec_helper'
 
-
-describe "Dfat::FileReader" do
-
-  before(:each) do
+describe "Dfat::FileReader", "for a typical dfat file" do
+  before do
     @file = File.new(File.dirname(__FILE__) + '/../../../fixtures/regulation8_consolidated.xls')
   end
 
-  describe "parse_into_array class method (parse osfi example file)" do
-
-    before(:each) do
+  describe "#parse_into_array" do
+    before do
       @records = Dfat::FileReader.parse_into_array(@file)
     end
 
@@ -22,13 +19,11 @@ describe "Dfat::FileReader" do
       r[0].should == 1.0
       r[1].should == "Mohammad Rabbani"
       r[2].should == "Individual"
-      #r[3].should == "CC (February 12, 2003)" # cleaned from quotes
-    end
-    
+    end    
   end
 
-  describe "parse" do
-    before(:each) do
+  describe "#parse" do
+    before do
       @converter = mock('Converter')
       @converter.stub!(:convert_record)
     end
@@ -38,5 +33,4 @@ describe "Dfat::FileReader" do
       Dfat::FileReader.new(@converter).parse(@file)
     end
   end
-
 end

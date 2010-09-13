@@ -6,14 +6,11 @@ require 'rspec/autorun'
 require 'sanctionwatch'
 require 'lib/fetcher'
 
-
 # set test environment
 set :environment, :test
 set :run, false
 set :raise_errors, true
 set :logging, false
-
-
 
 def search_mock
   m = mock(SearchEngine)
@@ -21,7 +18,7 @@ def search_mock
   m
 end
 
-
+# Define a "have tag" matcher
 class HaveTag
   def initialize(tag, count = 1)
     @tag, @count = tag, count
@@ -39,9 +36,7 @@ class HaveTag
   def failure_message_for_should_not
     "expected #{@target.inspect} not to have tag #{@tag} #{@count} times"
   end
-
 end
-
 
 def have_tag(tag, count = 1)
   HaveTag.new(tag, count)
