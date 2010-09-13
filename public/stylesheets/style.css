@@ -123,6 +123,10 @@ div#header .version {
   padding-top: 2px;
 }
 
+#results_summary p {
+  margin: 2px;
+}
+
 #results_stats {
   padding-top: 5px;
 }
