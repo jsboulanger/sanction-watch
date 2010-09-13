@@ -3,7 +3,7 @@
   <% unless @doc['aka'].blank? %>
     <tr>
       <td class="label">Also known as:</td>
-      <td><%=h @doc['aka'].map {|a| a == params[:q] ? "<strong>#{a}</strong>" : a }.join(', ') %></td>
+      <td><%= @doc['aka'].map {|a| a == params[:q] ? "<strong>#{a}</strong>" : a }.join(', ') %></td>
     </tr>
   <% end %>
   <tr>
