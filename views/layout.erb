@@ -14,16 +14,17 @@
 <body>
   <div id="page-frame">			
     <div id="container">
-      <div id="header">&nbsp;<a href="/" class="title">SanctionWatch.net</a>&nbsp;(Alpha)</div>
+      <div id="header"><h1><a href="/"
+        class="title">SanctionWatch.net</a><span class="version">Prototype</span></h1></div>
       <div id="topnav"></div>
       <div id="content"><%= yield %></div>
       <div id="footer">
-        <div id="copyright">
+        <div class="copyright">
           &copy; 2009 SanctionWatch.net
         </div>
       </div>
     </div>
   </div>
-  <%=  erb :"_tracking", :layout => false %>
+  <%= erb :"_tracking.html", :layout => false %>
 </body>
 </html>

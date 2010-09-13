@@ -62,7 +62,7 @@ get '/' do
     @query_time = Time.now - start_time
   end
   
-  erb :index
+  erb :"index.html"
 end
 
 get '/suggest' do
@@ -74,5 +74,5 @@ end
 get '/details' do
   @doc = SearchEngine.get(params[:uid].to_s.strip)
   raise Sinatra::NotFound if @doc.nil?
-  erb :details
+  erb :"details.html"
 end
