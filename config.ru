@@ -6,6 +6,5 @@ Sinatra::Application.default_options.merge!(
   :env => :production
 )
 
-
 require 'sanctionwatch.rb'
 run Sinatra::Application
