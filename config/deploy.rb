@@ -1,14 +1,12 @@
 set :application, "sanctionwatch"
 set :domain, "sanctionwatch.net"
-set :repository, "http://svn.jsboulanger.com/sanction-watch/trunk/"
+set :repository, "git@github.com:jsboulanger/sanction-watch.git"
 set :user, "root"
-#set :repository,  "set your repository location here"
+set :scm, :git
 
 set :use_sudo, false
 set :deploy_to, "/var/www/#{application}"
-
-set :scm_username, "capistrano"
-set :scm_password, ""
+set :deploy_via, :remote_cache
 
 role :app, domain
 role :web, domain
